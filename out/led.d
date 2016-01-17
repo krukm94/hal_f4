@@ -1,0 +1,15 @@
+.\out\led.o: source\led.c
+.\out\led.o: source\led.h
+.\out\led.o: .\lib\stm32f4xx.h
+.\out\led.o: .\lib\core_cm4.h
+.\out\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\out\led.o: .\lib\core_cmInstr.h
+.\out\led.o: .\lib\core_cmFunc.h
+.\out\led.o: .\lib\core_cmSimd.h
+.\out\led.o: .\lib\system_stm32f4xx.h
+.\out\led.o: .\lib\stm32f4xx_conf.h
+.\out\led.o: .\lib\inc\stm32f4xx_dbgmcu.h
+.\out\led.o: .\lib\stm32f4xx.h
+.\out\led.o: .\lib\inc\stm32f4xx_gpio.h
+.\out\led.o: .\lib\inc\stm32f4xx_pwr.h
+.\out\led.o: .\lib\inc\stm32f4xx_rcc.h

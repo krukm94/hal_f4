@@ -1,0 +1,16 @@
+.\out\lis3dsh.o: source\lis3dsh.c
+.\out\lis3dsh.o: source\lis3dsh.h
+.\out\lis3dsh.o: .\lib\stm32f4xx.h
+.\out\lis3dsh.o: .\lib\core_cm4.h
+.\out\lis3dsh.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\out\lis3dsh.o: .\lib\core_cmInstr.h
+.\out\lis3dsh.o: .\lib\core_cmFunc.h
+.\out\lis3dsh.o: .\lib\core_cmSimd.h
+.\out\lis3dsh.o: .\lib\system_stm32f4xx.h
+.\out\lis3dsh.o: .\lib\stm32f4xx_conf.h
+.\out\lis3dsh.o: .\lib\inc\stm32f4xx_dbgmcu.h
+.\out\lis3dsh.o: .\lib\stm32f4xx.h
+.\out\lis3dsh.o: .\lib\inc\stm32f4xx_gpio.h
+.\out\lis3dsh.o: .\lib\inc\stm32f4xx_pwr.h
+.\out\lis3dsh.o: .\lib\inc\stm32f4xx_rcc.h
+.\out\lis3dsh.o: .\lib\inc\stm32f4xx_spi.h
