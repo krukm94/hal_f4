@@ -5,10 +5,16 @@ Data : 20.07.2015
 
 #include "timer.h"
 
-volatile uint32_t procent;
-volatile uint32_t procent_save;
 
-char buf[16];
+/* ------------------> Variables */
+volatile float procent;
+volatile float procent_save;
+// ODNIESIENIE (ilosc iteracji zmiennej procent w glownej petli while przy praku obciazenia uC) 
+float odniesienie = 16777216;
+
+
+
+
 /*  wskaznik na funkcje --------------------------------------------------------*/
 static void (*timerIRQ)(void);
 
@@ -49,14 +55,16 @@ uint8_t TIM4_init(void){
 		TIM4		PRZERWANIE
 	-------------------------------------------------------------------------------
 */
+
+/* Sprawdzone logic Analizerem, przerwanie trwa 2,003 [ms] */
 void TIM4_IRQHandler(void){
+
 		if(TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET){
-		TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+
+			TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
 		
-		ledToggle(12);
-		procent_save = procent;
-		procent = 0;
-			
+		//ledToggle(12);
+	
 		obciazenie_uC();
 
 		}
@@ -66,15 +74,32 @@ void TIM4_IRQHandler(void){
 	-------------------------------------------------------------------------------
 */
 void obciazenie_uC(void){
-		//obc = (100 - ((procent_save*100)/odniesienie));
-		itoa(procent_save, buf, 10);
 		
+		float obc;
+		char buf[16];
+		
+		
+	//Obliczenie procnetu obciazenia 
+		obc = (100 - ((procent_save*100)/odniesienie));
+		
+	//lapanie wartosci procent do zmiennej
+		procent_save = procent;
+		
+	//konwersja
+		itoa(obc, buf, 10);
+		
+	//funcje obslugi terminala
 		tr_cls(0);
 		tr_locate(0,0);
+		
+	//wysylanie danych
 		uart_puts("\n\rObciazenie uC: ");
 		uart_puts(buf);
-	
-	
+		uart_puts("%\n\r");
+			
+			//zerowanie 
+			procent = 0;
+		
 }
 
 /* ----------------------------------------------------------------------------

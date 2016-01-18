@@ -10,9 +10,9 @@ void halLib_Init(void){
    // Przywitanie
 		uart_puts("\n\r---> STM32F4 <----\n\r");
 		uart_puts(__TIME__);
-		
+				
 		TIM4_init();
-		led_port_init();
+	//	led_port_init();
 	
    // lcdInit();
 	

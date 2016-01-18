@@ -4,7 +4,7 @@
 #include "uart.h"
 
 /* --------------> VARIABLES */
-extern volatile uint32_t procent;
+extern volatile float procent;
 
 
 int main (void)
@@ -14,9 +14,10 @@ int main (void)
 		
 	while(1)
 	{
+
 		// zmienna do wyliczania obciazenia uC
 		procent++;
-
+		
 	}
 }
 
